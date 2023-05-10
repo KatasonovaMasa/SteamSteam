@@ -1,4 +1,4 @@
-package tests;
+package tests.ui;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Feature;
@@ -11,6 +11,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import steps.SteamSteps;
+import tests.Specs;
+import tests.TestBase;
 
 import static help.CustomApiListener2.withCustomTemplates;
 import static io.restassured.RestAssured.given;
