@@ -3,7 +3,9 @@ package models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class User2 {
+public class ResultSearch {
+    private Integer success, total_count, start;
+    private String results_html;
     public Integer getSuccess() {
         return success;
     }
@@ -35,9 +37,4 @@ public class User2 {
     public void setResults_html(String results_html) {
         this.results_html = results_html;
     }
-
-    private Integer success, total_count, start;
-    private String results_html;
-
-
-        }
+ }

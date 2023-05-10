@@ -5,15 +5,12 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import io.qameta.allure.selenide.AllureSelenide;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import models.User2;
+import models.ResultSearch;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import steps.SteamSteps;
-
-import java.util.Locale;
 
 import static help.CustomApiListener2.withCustomTemplates;
 import static io.restassured.RestAssured.given;
@@ -69,7 +66,7 @@ public class SteamTest extends TestBase {
     @DisplayName("Кнопка поиска игр")
     void searchJobApi() {
         SelenideLogger.addListener("allure", new AllureSelenide());
-        User2 data = given()
+        ResultSearch data = given()
                 .filter(withCustomTemplates())
                 .log().uri()
                 .contentType(ContentType.JSON)
@@ -77,13 +74,13 @@ public class SteamTest extends TestBase {
                 .queryParam("term", "Cuphead")
                 .queryParam("supportedlang", "russian")
                 .queryParam("infinite", "1")
-                .spec(Specs2.request)
+                .spec(Specs.requestSearch)
                 .when()
                 .get("/?query")
                 .then()
-                .spec(Specs2.responseSpec)
+                .spec(Specs.responseSpec)
                 .log().body()
-                .extract().as(User2.class);
+                .extract().as(ResultSearch.class);
         assertEquals(1, data.getSuccess());
         assertEquals( 17, data.getTotal_count());
     }
