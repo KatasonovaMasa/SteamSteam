@@ -25,18 +25,14 @@ public class Specs {
             .basePath("dynamicstore/saledata/?")
             .log().all()
             .contentType(ContentType.JSON);
+
+    public static RequestSpecification responseCommunity = with()
+            .baseUri("https://store.steampowered.com")
+            .basePath("/communityrecommendations")
+            .log().all()
+            .contentType(ContentType.JSON);
     public static ResponseSpecification responseSpec = new ResponseSpecBuilder()
             .expectStatusCode(200)
-//            .expectBody(containsString("success"))
-            .build();
-    public static ResponseSpecification responseDelete = new ResponseSpecBuilder()
-            .expectStatusCode(204)
             .build();
 
-    public static ResponseSpecification responseSuccessAdd = new ResponseSpecBuilder()
-            .expectStatusCode(201)
-            .build();
-    public static ResponseSpecification responseUnsuccess = new ResponseSpecBuilder()
-            .expectStatusCode(400)
-            .build();
 }

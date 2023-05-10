@@ -7,7 +7,6 @@ import io.qameta.allure.Story;
 import io.qameta.allure.selenide.AllureSelenide;
 import io.restassured.http.ContentType;
 import models.ResultAddCart;
-import models.ResultOpenCategories;
 import models.ResultSearch;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -53,7 +52,7 @@ public class SteamRestApiTest {
     @Feature("Апишка для тестов Steam")
     @Story("Раздел Игр")
     @Owner("Катасонова Мария")
-    @DisplayName("Проверка поиска игр")
+    @DisplayName("Открытие раздела игр 'Выживание'")
     void openSurvivalGamesApi() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         given()
@@ -74,11 +73,12 @@ public class SteamRestApiTest {
                 .statusCode(200)
                 .body(matchesJsonSchemaInClasspath("schemes/openCategories.json"));
     }
+
     @Test
     @Feature("Апишка для тестов Steam")
     @Story("Раздел Игр")
     @Owner("Катасонова Мария")
-    @DisplayName("Проверка поиска игр")
+    @DisplayName("Добавление игры в корзину")
     void potentialBuyGamesApi() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         ResultAddCart data = given()
@@ -92,6 +92,6 @@ public class SteamRestApiTest {
                 .then()
                 .spec(Specs.responseSpec)
                 .extract().as(ResultAddCart.class);
-                assertEquals(true, data.isbAllowAppImpressions());
+        assertEquals(true, data.isbAllowAppImpressions());
     }
 }
