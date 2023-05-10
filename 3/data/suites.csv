@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed May 10 12:52:20 GMT 2023","Wed May 10 12:52:27 GMT 2023","6697","","tests.SteamTest","","tests.SteamTest","searchJob","Кнопка поиска игр",""
+"passed","Wed May 10 12:51:31 GMT 2023","Wed May 10 12:51:47 GMT 2023","15412","","tests.SteamTest","","tests.SteamTest","checkCommunityActive","Рекомендации в Активности сообщества",""
+"passed","Wed May 10 12:52:03 GMT 2023","Wed May 10 12:52:13 GMT 2023","10393","","tests.SteamTest","","tests.SteamTest","deleteGameCart","Удалить игру из корзины",""
+"passed","Wed May 10 12:51:57 GMT 2023","Wed May 10 12:52:03 GMT 2023","5268","","tests.SteamTest","","tests.SteamTest","searchJobApi","Кнопка поиска игр",""
+"passed","Wed May 10 12:52:13 GMT 2023","Wed May 10 12:52:20 GMT 2023","7104","","tests.SteamTest","","tests.SteamTest","openSurvivalGames","Открытие раздела игр 'Выживание'",""
+"passed","Wed May 10 12:51:47 GMT 2023","Wed May 10 12:51:57 GMT 2023","10564","","tests.SteamTest","","tests.SteamTest","potentialBuyGames","Добавление игры в корзину",""
